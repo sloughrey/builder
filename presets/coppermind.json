@@ -1,0 +1,52 @@
+{
+  "wiki": "https://coppermind.net",
+  "bufferDays": 3,
+  "universes": {
+    "cosmere": {
+      "title": "The whole Cosmere (every article on the wiki)",
+      "categories": []
+    },
+    "stormlight": {
+      "title": "The Stormlight Archive",
+      "categories": ["Stormlight Archive"],
+      "depth": 2,
+      "exclude": []
+    },
+    "mistborn": {
+      "title": "Mistborn",
+      "categories": ["Mistborn"],
+      "depth": 2,
+      "exclude": []
+    },
+    "elantris": {
+      "title": "Elantris",
+      "categories": ["Elantris"],
+      "depth": 2,
+      "exclude": []
+    },
+    "warbreaker": {
+      "title": "Warbreaker",
+      "categories": ["Warbreaker"],
+      "depth": 2,
+      "exclude": []
+    }
+  },
+  "books": [
+    { "id": "elantris",              "title": "Elantris",                          "series": "elantris",   "released": "2005-04-21" },
+    { "id": "final-empire",          "title": "The Final Empire",                  "series": "mistborn",   "released": "2006-07-17" },
+    { "id": "well-of-ascension",     "title": "The Well of Ascension",             "series": "mistborn",   "released": "2007-08-21" },
+    { "id": "hero-of-ages",          "title": "The Hero of Ages",                  "series": "mistborn",   "released": "2008-10-14" },
+    { "id": "warbreaker",            "title": "Warbreaker",                        "series": "warbreaker", "released": "2009-06-09" },
+    { "id": "way-of-kings",          "title": "The Way of Kings",                  "series": "stormlight", "released": "2010-08-31" },
+    { "id": "alloy-of-law",          "title": "The Alloy of Law",                  "series": "mistborn",   "released": "2011-11-08" },
+    { "id": "words-of-radiance",     "title": "Words of Radiance",                 "series": "stormlight", "released": "2014-03-04" },
+    { "id": "shadows-of-self",       "title": "Shadows of Self",                   "series": "mistborn",   "released": "2015-10-06" },
+    { "id": "bands-of-mourning",     "title": "The Bands of Mourning",             "series": "mistborn",   "released": "2016-01-26" },
+    { "id": "edgedancer",            "title": "Edgedancer (in Arcanum Unbounded)", "series": "stormlight", "released": "2016-11-22" },
+    { "id": "oathbringer",           "title": "Oathbringer",                       "series": "stormlight", "released": "2017-11-14" },
+    { "id": "dawnshard",             "title": "Dawnshard",                         "series": "stormlight", "released": "2020-11-06" },
+    { "id": "rhythm-of-war",         "title": "Rhythm of War",                     "series": "stormlight", "released": "2020-11-17" },
+    { "id": "lost-metal",            "title": "The Lost Metal",                    "series": "mistborn",   "released": "2022-11-15" },
+    { "id": "wind-and-truth",        "title": "Wind and Truth",                    "series": "stormlight", "released": "2024-12-06" }
+  ]
+}

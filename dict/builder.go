@@ -13,6 +13,9 @@ type GeneratorOptions struct {
 	// A function that gets called after each batch is processed, used to hook
 	// into the progress of the generator.
 	ProgressHook func(processed int, total int)
+	// When set, build a spoiler-free dictionary from revisions made before
+	// Dated.Cutoff instead of the current wiki.
+	Dated *DatedOptions
 }
 
 func BuildDictionary(wikiUrl string, options GeneratorOptions) (Dict, error) {
@@ -32,13 +35,23 @@ func BuildDictionary(wikiUrl string, options GeneratorOptions) (Dict, error) {
 	dict.ApiUrl = wiki.ApiUrl
 	dict.Lang = wiki.Lang
 
-	err = dict.GenerateDefinitionsFromWiki(wikibot.GetWikiPageBatch, wiki, options)
-	if err != nil {
-		return Dict{}, err
+	if options.Dated != nil {
+		stats, err := dict.GenerateDatedDefinitions(wiki, options, *options.Dated)
+		if err != nil {
+			return Dict{}, err
+		}
+		stats.Print()
+	} else {
+		err = dict.GenerateDefinitionsFromWiki(wikibot.GetWikiPageBatch, wiki, options)
+		if err != nil {
+			return Dict{}, err
+		}
 	}
 
 	if options.Output != "" {
-		dict.Write(options.Output, options.Format)
+		if _, err := dict.Write(options.Output, options.Format); err != nil {
+			return Dict{}, err
+		}
 	}
 
 	return dict, nil
