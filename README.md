@@ -198,3 +198,47 @@ _, err := d.BuildDictionary(wikiUrl, d.GeneratorOptions{
 | Depth        | The number of sentences that make up each definition.                                                                                          |
 | EntryLimit   | The maximum number of word entries written to a dictionary.                                                                                    |
 | ProgressHook | A function that runs after every batch is processed -- can be used to report progress or perform some other action that hooks into generation. |
+
+## Spoiler-free dictionaries
+
+Build a dictionary from the wiki **as it was before a given book came out**, so
+definitions never mention events from books you haven't read yet. Every
+definition comes from the newest revision of its page made before the cutoff:
+pages created later are left out, alternative names (redirects) only count if
+they already existed, and pages renamed later keep their old names. This uses
+the standard MediaWiki API, so it works on any MediaWiki wiki, not just the
+Coppermind.
+
+```sh
+# List the built-in universes and books (Coppermind presets)
+builder books
+
+# Starting Rhythm of War: Stormlight pages only, as of 3 days before its release
+builder -universe stormlight -book rhythm-of-war -o ./out generate
+
+# The whole Cosmere, a month earlier to skip preview-chapter edits
+builder -universe cosmere -book rhythm-of-war -buffer 30 -o ./out generate
+
+# Any MediaWiki wiki, with a plain date and your own categories
+builder -before 2021-03-01 -category "Characters" -o ./out generate https://malazan.fandom.com
+```
+
+| Flag | Meaning |
+| --- | --- |
+| `-universe` | A universe from the presets (`cosmere`, `stormlight`, `mistborn`, ...) |
+| `-book` | The book you're about to start; the cutoff is its release date minus `-buffer` days |
+| `-buffer` | Days before release to cut off (default 3, from the presets) |
+| `-before` | Exact cutoff date `YYYY-MM-DD`; overrides `-book` |
+| `-category`, `-category-depth` | Build from your own categories instead of a preset universe |
+| `-exclude` | Page or category titles to leave out |
+| `-no-synonyms` | Skip alternative names; roughly halves the number of requests |
+| `-presets` | Your own presets JSON (same shape as `presets/coppermind.json`) |
+| `-rate`, `-workers` | Politeness: max requests per second (default 2) and parallel requests |
+| `-cache` | Where API responses are cached; reruns and interrupted builds resume quickly |
+| `-contact` | Your email or URL, added to the User-Agent for the wiki's admins |
+
+MediaWiki only allows dated lookups one page at a time, so expect roughly one
+request per page and one per alternative name: a few thousand pages takes
+around 30-60 minutes at the default rate. Output is a normal Runik `json`
+dictionary: copy it into the Runik app's dictionaries folder and install it to
+your device from the app as usual.

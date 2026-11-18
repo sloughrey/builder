@@ -1,0 +1,55 @@
+{
+  "release": {
+    "baseBranch": "main",
+    "branchPrefix": "release/",
+    "current": "v0.1.0"
+  },
+  "labels": [
+    {
+      "name": "type:feature",
+      "color": "1d76db",
+      "description": "New functionality"
+    },
+    {
+      "name": "type:bug",
+      "color": "d73a4a",
+      "description": "Something isn't working"
+    },
+    {
+      "name": "type:chore",
+      "color": "c5def5",
+      "description": "Tooling, config, CI, dependencies"
+    },
+    {
+      "name": "type:test",
+      "color": "bfd4f2",
+      "description": "Tests only"
+    },
+    {
+      "name": "area:docs",
+      "color": "0e8a16",
+      "description": "Documentation"
+    },
+    {
+      "name": "area:infra",
+      "color": "fbca04",
+      "description": "CI, build, tooling, deployment"
+    },
+    {
+      "name": "area:dict",
+      "color": "5319e7",
+      "description": "Dictionary building and formatting"
+    },
+    {
+      "name": "area:wiki",
+      "color": "006b75",
+      "description": "Wiki bot, dated revisions, wikitext parsing"
+    },
+    {
+      "name": "area:wasm",
+      "color": "b60205",
+      "description": "WASM build"
+    }
+  ],
+  "docsCheck": false
+}

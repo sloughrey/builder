@@ -36,6 +36,9 @@ func GetRequest[T any](baseUrl string, queryParams url.Values, options GetReques
 	}
 
 	req, err := http.NewRequest("GET", queryUrl.String(), nil)
+	if err != nil {
+		return *new(T), err
+	}
 	req.Header.Add("User-Agent", "Runik")
 
 	res, err := client.Do(req)
@@ -55,7 +58,7 @@ func GetRequest[T any](baseUrl string, queryParams url.Values, options GetReques
 
 	e := json.Unmarshal(body, &data)
 	if e != nil {
-		return *new(T), err
+		return *new(T), e
 	}
 
 	return data, nil
