@@ -41,10 +41,20 @@ func (b Book) ReleaseDate() (time.Time, error) {
 }
 
 type Presets struct {
-	Wiki       string              `json:"wiki"`
-	BufferDays int                 `json:"bufferDays"`
-	Universes  map[string]Universe `json:"universes"`
-	Books      []Book              `json:"books"`
+	Wiki       string `json:"wiki"`
+	BufferDays int    `json:"bufferDays"`
+	// Date of the wiki's oldest revision (YYYY-MM-DD). A cutoff before it
+	// would build an empty dictionary. Optional.
+	HistoryStart string              `json:"historyStart"`
+	Universes    map[string]Universe `json:"universes"`
+	Books        []Book              `json:"books"`
+}
+
+// BeforeHistory reports whether cutoff is earlier than the wiki's oldest
+// revision, i.e. there is no version of the wiki from before it.
+func (p Presets) BeforeHistory(cutoff time.Time) bool {
+	start, err := time.Parse(DateLayout, p.HistoryStart)
+	return err == nil && cutoff.Before(start)
 }
 
 // Load reads presets from path, or the embedded Coppermind presets when path
@@ -65,6 +75,11 @@ func Parse(data []byte) (Presets, error) {
 	var p Presets
 	if err := json.Unmarshal(data, &p); err != nil {
 		return Presets{}, fmt.Errorf("invalid presets file: %w", err)
+	}
+	if p.HistoryStart != "" {
+		if _, err := time.Parse(DateLayout, p.HistoryStart); err != nil {
+			return Presets{}, fmt.Errorf("invalid historyStart %q (want YYYY-MM-DD)", p.HistoryStart)
+		}
 	}
 	for _, b := range p.Books {
 		if _, err := b.ReleaseDate(); err != nil {
@@ -127,8 +142,12 @@ func (p Presets) Print(w io.Writer) {
 		ids = append(ids, id)
 	}
 	sort.Strings(ids)
+	width := 0
 	for _, id := range ids {
-		fmt.Fprintf(w, "  %-12s %s\n", id, p.Universes[id].Title)
+		width = max(width, len(id))
+	}
+	for _, id := range ids {
+		fmt.Fprintf(w, "  %-*s %s\n", width, id, p.Universes[id].Title)
 	}
 
 	fmt.Fprintf(w, "\nBooks (-book), default cutoff %d days before release:\n", p.BufferDays)
@@ -140,11 +159,19 @@ func (p Presets) Print(w io.Writer) {
 		return books[i].Released < books[j].Released
 	})
 	series := ""
+	tooEarly := false
 	for _, b := range books {
 		if b.Series != series {
 			series = b.Series
 			fmt.Fprintf(w, "  [%s]\n", series)
 		}
-		fmt.Fprintf(w, "    %-20s %s  %s\n", b.Id, b.Released, b.Title)
+		mark := " "
+		if cutoff, err := p.Cutoff(b, -1); err == nil && p.BeforeHistory(cutoff) {
+			mark, tooEarly = "*", true
+		}
+		fmt.Fprintf(w, "  %s %-27s %s  %s\n", mark, b.Id, b.Released, b.Title)
+	}
+	if tooEarly {
+		fmt.Fprintf(w, "\n* Released before the wiki's history starts (%s): no spoiler-free build is possible.\n", p.HistoryStart)
 	}
 }

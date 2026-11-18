@@ -173,6 +173,11 @@ func main() {
 			if wikiUrl == "" {
 				wikiUrl = p.Wiki
 			}
+			// Other wikis have their own history; only check the presets' wiki.
+			if strings.TrimRight(wikiUrl, "/") == strings.TrimRight(p.Wiki, "/") && p.BeforeHistory(dated.Cutoff) {
+				log.Fatalf("%s has no history before %s, so there is no version of it from before %s. Pick a later book or -before date.",
+					p.Wiki, p.HistoryStart, dated.Cutoff.Format(presets.DateLayout))
+			}
 			if options.Name == "" && len(nameParts) > 0 {
 				options.Name = strings.Join(nameParts, "-")
 			}
