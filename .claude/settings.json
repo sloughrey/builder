@@ -1,0 +1,11 @@
+{
+  "extraKnownMarketplaces": {
+    "claude-workflows": {
+      "source": { "source": "github", "repo": "sloughrey/claude-workflows" },
+      "autoUpdate": true
+    }
+  },
+  "enabledPlugins": {
+    "structured@claude-workflows": true
+  }
+}

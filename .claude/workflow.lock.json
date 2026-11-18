@@ -1,0 +1,45 @@
+{
+  "files": {
+    ".github/pull_request_template.md": {
+      "template": "d0717d868934ca03",
+      "file": "d0717d868934ca03"
+    },
+    ".github/PULL_REQUEST_TEMPLATE/release.md": {
+      "template": "47cafbb0b83766de",
+      "file": "47cafbb0b83766de"
+    },
+    ".github/ISSUE_TEMPLATE/feature.md": {
+      "template": "d56bf74e9081e85e",
+      "file": "d56bf74e9081e85e"
+    },
+    ".github/ISSUE_TEMPLATE/bug.md": {
+      "template": "522a189011c5ee2e",
+      "file": "522a189011c5ee2e"
+    },
+    ".github/workflow-scripts/docs-check.mjs": {
+      "template": "88c93373050ec5dd",
+      "file": "88c93373050ec5dd"
+    },
+    ".github/workflow-scripts/secrets-scan.mjs": {
+      "template": "577e57cb279ed2f2",
+      "file": "577e57cb279ed2f2"
+    },
+    ".github/workflow-scripts/lib/config.mjs": {
+      "template": "6eb718b23f41cace",
+      "file": "6eb718b23f41cace"
+    },
+    ".github/workflow-scripts/lib/glob.mjs": {
+      "template": "61d48783e46d09ed",
+      "file": "61d48783e46d09ed"
+    },
+    ".claude/agents/Explore.md": {
+      "template": "5973892331a7c265",
+      "file": "5973892331a7c265"
+    },
+    "docs/workflow.md": {
+      "template": "8e367ddccd2b3758",
+      "file": "8e367ddccd2b3758"
+    }
+  },
+  "plugin": "structured@0.5.0"
+}
