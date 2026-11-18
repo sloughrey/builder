@@ -1,6 +1,7 @@
 {
   "wiki": "https://coppermind.net",
   "bufferDays": 3,
+  "historyStart": "2010-06-13",
   "universes": {
     "cosmere": {
       "title": "The whole Cosmere (every article on the wiki)",
@@ -29,24 +30,172 @@
       "categories": ["Warbreaker"],
       "depth": 2,
       "exclude": []
+    },
+    "emperors-soul": {
+      "title": "The Emperor's Soul",
+      "categories": ["The Emperor's Soul"],
+      "depth": 2,
+      "exclude": []
+    },
+    "shadows-for-silence": {
+      "title": "Shadows for Silence in the Forests of Hell",
+      "categories": ["Shadows for Silence"],
+      "depth": 2,
+      "exclude": []
+    },
+    "emberdark": {
+      "title": "Sixth of the Dusk and Isles of the Emberdark",
+      "categories": ["Isles of the Emberdark"],
+      "depth": 2,
+      "exclude": []
+    },
+    "tress": {
+      "title": "Tress of the Emerald Sea",
+      "categories": ["Tress of the Emerald Sea"],
+      "depth": 2,
+      "exclude": []
+    },
+    "yumi": {
+      "title": "Yumi and the Nightmare Painter",
+      "categories": ["Yumi and the Nightmare Painter"],
+      "depth": 2,
+      "exclude": []
+    },
+    "sunlit-man": {
+      "title": "The Sunlit Man",
+      "categories": ["The Sunlit Man"],
+      "depth": 2,
+      "exclude": []
+    },
+    "fires-of-december": {
+      "title": "The Fires of December",
+      "categories": ["The Fires of December"],
+      "depth": 2,
+      "exclude": []
+    },
+    "skyward": {
+      "title": "Skyward and the Cytoverse (not Cosmere)",
+      "categories": ["Cytoverse"],
+      "depth": 2,
+      "exclude": []
+    },
+    "reckoners": {
+      "title": "The Reckoners (not Cosmere)",
+      "categories": ["The Reckoners"],
+      "depth": 2,
+      "exclude": []
+    },
+    "alcatraz": {
+      "title": "Alcatraz Versus the Evil Librarians (not Cosmere)",
+      "categories": ["Alcatraz"],
+      "depth": 2,
+      "exclude": []
+    },
+    "legion": {
+      "title": "Legion (not Cosmere)",
+      "categories": ["Legion"],
+      "depth": 2,
+      "exclude": []
+    },
+    "rithmatist": {
+      "title": "The Rithmatist (not Cosmere)",
+      "categories": ["The Rithmatist"],
+      "depth": 2,
+      "exclude": []
+    },
+    "frugal-wizard": {
+      "title": "The Frugal Wizard's Handbook for Surviving Medieval England (not Cosmere)",
+      "categories": ["Frugal Wizard"],
+      "depth": 2,
+      "exclude": []
+    },
+    "dreamer": {
+      "title": "Dreamer (not Cosmere)",
+      "categories": ["Dreamer"],
+      "depth": 2,
+      "exclude": []
+    },
+    "perfect-state": {
+      "title": "Perfect State (not Cosmere)",
+      "categories": ["Perfect State"],
+      "depth": 2,
+      "exclude": []
+    },
+    "snapshot": {
+      "title": "Snapshot (not Cosmere)",
+      "categories": ["Snapshot"],
+      "depth": 2,
+      "exclude": []
+    },
+    "the-original": {
+      "title": "The Original (not Cosmere)",
+      "categories": ["The Original"],
+      "depth": 2,
+      "exclude": []
+    },
+    "moment-zero": {
+      "title": "Moment Zero (not Cosmere)",
+      "categories": ["Moment Zero"],
+      "depth": 2,
+      "exclude": []
     }
   },
   "books": [
-    { "id": "elantris",              "title": "Elantris",                          "series": "elantris",   "released": "2005-04-21" },
-    { "id": "final-empire",          "title": "The Final Empire",                  "series": "mistborn",   "released": "2006-07-17" },
-    { "id": "well-of-ascension",     "title": "The Well of Ascension",             "series": "mistborn",   "released": "2007-08-21" },
-    { "id": "hero-of-ages",          "title": "The Hero of Ages",                  "series": "mistborn",   "released": "2008-10-14" },
-    { "id": "warbreaker",            "title": "Warbreaker",                        "series": "warbreaker", "released": "2009-06-09" },
-    { "id": "way-of-kings",          "title": "The Way of Kings",                  "series": "stormlight", "released": "2010-08-31" },
-    { "id": "alloy-of-law",          "title": "The Alloy of Law",                  "series": "mistborn",   "released": "2011-11-08" },
-    { "id": "words-of-radiance",     "title": "Words of Radiance",                 "series": "stormlight", "released": "2014-03-04" },
-    { "id": "shadows-of-self",       "title": "Shadows of Self",                   "series": "mistborn",   "released": "2015-10-06" },
-    { "id": "bands-of-mourning",     "title": "The Bands of Mourning",             "series": "mistborn",   "released": "2016-01-26" },
-    { "id": "edgedancer",            "title": "Edgedancer (in Arcanum Unbounded)", "series": "stormlight", "released": "2016-11-22" },
-    { "id": "oathbringer",           "title": "Oathbringer",                       "series": "stormlight", "released": "2017-11-14" },
-    { "id": "dawnshard",             "title": "Dawnshard",                         "series": "stormlight", "released": "2020-11-06" },
-    { "id": "rhythm-of-war",         "title": "Rhythm of War",                     "series": "stormlight", "released": "2020-11-17" },
-    { "id": "lost-metal",            "title": "The Lost Metal",                    "series": "mistborn",   "released": "2022-11-15" },
-    { "id": "wind-and-truth",        "title": "Wind and Truth",                    "series": "stormlight", "released": "2024-12-06" }
+    { "id": "elantris",                 "title": "Elantris",                                    "series": "elantris",            "released": "2005-04-21" },
+    { "id": "final-empire",             "title": "The Final Empire",                            "series": "mistborn",            "released": "2006-07-17" },
+    { "id": "well-of-ascension",        "title": "The Well of Ascension",                       "series": "mistborn",            "released": "2007-08-21" },
+    { "id": "alcatraz",                 "title": "Alcatraz Versus the Evil Librarians",         "series": "alcatraz",            "released": "2007-10-01" },
+    { "id": "hero-of-ages",             "title": "The Hero of Ages",                            "series": "mistborn",            "released": "2008-10-14" },
+    { "id": "scriveners-bones",         "title": "The Scrivener's Bones",                       "series": "alcatraz",            "released": "2008-11-01" },
+    { "id": "warbreaker",               "title": "Warbreaker",                                  "series": "warbreaker",          "released": "2009-06-09" },
+    { "id": "knights-of-crystallia",    "title": "The Knights of Crystallia",                   "series": "alcatraz",            "released": "2009-10-01" },
+    { "id": "way-of-kings",             "title": "The Way of Kings",                            "series": "stormlight",          "released": "2010-08-31" },
+    { "id": "shattered-lens",           "title": "The Shattered Lens",                          "series": "alcatraz",            "released": "2010-12-01" },
+    { "id": "alloy-of-law",             "title": "The Alloy of Law",                            "series": "mistborn",            "released": "2011-11-08" },
+    { "id": "legion",                   "title": "Legion",                                      "series": "legion",              "released": "2012-09-11" },
+    { "id": "emperors-soul",            "title": "The Emperor's Soul",                          "series": "emperors-soul",       "released": "2012-11-01" },
+    { "id": "rithmatist",               "title": "The Rithmatist",                              "series": "rithmatist",          "released": "2013-05-14" },
+    { "id": "steelheart",               "title": "Steelheart",                                  "series": "reckoners",           "released": "2013-09-24" },
+    { "id": "mitosis",                  "title": "Mitosis",                                     "series": "reckoners",           "released": "2013-12-03" },
+    { "id": "shadows-for-silence",      "title": "Shadows for Silence in the Forests of Hell",  "series": "shadows-for-silence", "released": "2013-12-03" },
+    { "id": "words-of-radiance",        "title": "Words of Radiance",                           "series": "stormlight",          "released": "2014-03-04" },
+    { "id": "dreamer",                  "title": "Dreamer",                                     "series": "dreamer",             "released": "2014-04-01" },
+    { "id": "sixth-of-the-dusk",        "title": "Sixth of the Dusk",                           "series": "emberdark",           "released": "2014-06-30" },
+    { "id": "legion-skin-deep",         "title": "Legion: Skin Deep",                           "series": "legion",              "released": "2014-11-30" },
+    { "id": "firefight",                "title": "Firefight",                                   "series": "reckoners",           "released": "2015-01-06" },
+    { "id": "perfect-state",            "title": "Perfect State",                               "series": "perfect-state",       "released": "2015-03-31" },
+    { "id": "shadows-of-self",          "title": "Shadows of Self",                             "series": "mistborn",            "released": "2015-10-06" },
+    { "id": "bands-of-mourning",        "title": "The Bands of Mourning",                       "series": "mistborn",            "released": "2016-01-26" },
+    { "id": "secret-history",           "title": "Mistborn: Secret History",                    "series": "mistborn",            "released": "2016-01-26" },
+    { "id": "calamity",                 "title": "Calamity",                                    "series": "reckoners",           "released": "2016-02-16" },
+    { "id": "dark-talent",              "title": "The Dark Talent",                             "series": "alcatraz",            "released": "2016-09-06" },
+    { "id": "edgedancer",               "title": "Edgedancer (in Arcanum Unbounded)",           "series": "stormlight",          "released": "2016-11-22" },
+    { "id": "arcanum-unbounded",        "title": "Arcanum Unbounded",                           "series": "cosmere",             "released": "2016-11-22" },
+    { "id": "snapshot",                 "title": "Snapshot",                                    "series": "snapshot",            "released": "2017-02-17" },
+    { "id": "oathbringer",              "title": "Oathbringer",                                 "series": "stormlight",          "released": "2017-11-14" },
+    { "id": "legion-lies-of-the-beholder", "title": "Legion: Lies of the Beholder",             "series": "legion",              "released": "2018-09-18" },
+    { "id": "skyward",                  "title": "Skyward",                                     "series": "skyward",             "released": "2018-11-06" },
+    { "id": "starsight",                "title": "Starsight",                                   "series": "skyward",             "released": "2019-11-26" },
+    { "id": "the-original",             "title": "The Original",                                "series": "the-original",        "released": "2020-09-14" },
+    { "id": "dawnshard",                "title": "Dawnshard",                                   "series": "stormlight",          "released": "2020-11-05" },
+    { "id": "rhythm-of-war",            "title": "Rhythm of War",                               "series": "stormlight",          "released": "2020-11-17" },
+    { "id": "lux",                      "title": "Lux",                                         "series": "reckoners",           "released": "2021-07-22" },
+    { "id": "sunreach",                 "title": "Sunreach",                                    "series": "skyward",             "released": "2021-09-28" },
+    { "id": "redawn",                   "title": "ReDawn",                                      "series": "skyward",             "released": "2021-10-26" },
+    { "id": "cytonic",                  "title": "Cytonic",                                     "series": "skyward",             "released": "2021-11-23" },
+    { "id": "evershore",                "title": "Evershore",                                   "series": "skyward",             "released": "2021-12-28" },
+    { "id": "bastille",                 "title": "Bastille Versus the Evil Librarians",         "series": "alcatraz",            "released": "2022-09-20" },
+    { "id": "lost-metal",               "title": "The Lost Metal",                              "series": "mistborn",            "released": "2022-11-15" },
+    { "id": "tress",                    "title": "Tress of the Emerald Sea",                    "series": "tress",               "released": "2023-01-01" },
+    { "id": "frugal-wizard",            "title": "The Frugal Wizard's Handbook for Surviving Medieval England", "series": "frugal-wizard", "released": "2023-04-01" },
+    { "id": "yumi",                     "title": "Yumi and the Nightmare Painter",              "series": "yumi",                "released": "2023-07-01" },
+    { "id": "sunlit-man",               "title": "The Sunlit Man",                              "series": "sunlit-man",          "released": "2023-10-01" },
+    { "id": "defiant",                  "title": "Defiant",                                     "series": "skyward",             "released": "2023-11-21" },
+    { "id": "hyperthief",               "title": "Hyperthief",                                  "series": "skyward",             "released": "2023-11-21" },
+    { "id": "wind-and-truth",           "title": "Wind and Truth",                              "series": "stormlight",          "released": "2024-12-06" },
+    { "id": "isles-of-the-emberdark",   "title": "Isles of the Emberdark",                      "series": "emberdark",           "released": "2025-07-01" },
+    { "id": "moment-zero",              "title": "Moment Zero",                                 "series": "moment-zero",         "released": "2025-12-09" },
+    { "id": "blightfall",               "title": "Blightfall",                                  "series": "skyward",             "released": "2026-09-01" },
+    { "id": "fires-of-december",        "title": "The Fires of December",                       "series": "fires-of-december",   "released": "2026-09-15" }
   ]
 }

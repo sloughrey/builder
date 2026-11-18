@@ -158,6 +158,17 @@ is untouched and still used when no spoiler flag is given.
    - Spot-check without spoiling the owner: compare ~10 definitions to the page
      viewed with the Time Machine set to the same date, and confirm pages known
      to be created for book 4 are absent.
+   **Presets for every book** (after Phase 0): `presets/coppermind.json` now has
+   56 books in 23 universes, Cosmere and non-Cosmere. Release dates come from
+   each book page's `{{book}}` infobox `released` field (Kickstarter/ebook date
+   where there are several; month-only dates use the 1st). Each series' universe
+   is its wiki category (Skyward uses `Cytoverse`, which also covers Blightfall).
+   Left out: RPG supplements, games, comics, Wheel of Time, unpublished drafts,
+   White Sand (no exact date). `historyStart` (2010-06-13, the oldest revision)
+   makes `generate` refuse cutoffs before the wiki existed instead of writing an
+   empty dictionary; `books` marks those books with `*`. Real check: `-universe
+   skyward -book cytonic` gives 248 entries (372 pages, 115 created after the cutoff).
+
 2. **Speed (bulk mode)**: whole-Cosmere builds are one request per page plus one
    per redirect. Add a bulk mode: walk `list=allrevisions` backwards from the
    cutoff (`arvdir=older`, `arvlimit=500`, ids/timestamps only), keep the first
