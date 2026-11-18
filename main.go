@@ -89,6 +89,13 @@ func main() {
 		p.Print(os.Stdout)
 
 	case "generate":
+		// Create the output directory up front so a long build doesn't fail
+		// only when it comes to write the file.
+		if *output != "" {
+			if err := os.MkdirAll(*output, 0o755); err != nil {
+				log.Fatal(err)
+			}
+		}
 		options := dict.GeneratorOptions{
 			Name:         *name,
 			Output:       *output,
